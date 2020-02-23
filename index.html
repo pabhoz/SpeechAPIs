@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Recognition Project</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="src/entities/Recognition.js"></script>
+</head>
+<body>
+    <button class="actionBtn" onclick="startRecording()">Empezar a grabar</button>
+    <button class="actionBtn" onclick="stopRecording()">Parar y guardar nota</button>
+    <div id="config">
+        <div class="title">Configs</div>
+        <div>Selector de color de la interfaz: <input id="appColor" type="color" onchange="setUIColor(this.value)"></div>
+        <div>
+            Selector de lenguage: 
+            <select id="langSelector" onchange="setLang(this.value)">
+                <option value="en">Inglés</option>
+                <option value="es" selected>Español</option>
+            </select>
+        </div>
+        <div>
+            Selector de Voz: <select id="voiceSelector" onchange="setVoice(this.value)"></select>
+        </div>
+    </div>
+    <div id="notesList">
+        <div class="title">Notes</div>
+        <div class="note">
+            <div>Nota en español</div><button onclick="readNote(event)">Reproducir</button>
+        </div>
+        <div class="note">
+            <div>Los idiomas cambian las voces disponibles</div><button onclick="readNote(event)">Reproducir</button>
+        </div>
+        <div class="note">
+            <div>This is another one</div><button onclick="readNote(event)">Reproducir</button>
+        </div>
+        <div class="note">
+            <div>Dj Khaled</div><button onclick="readNote(event)">Reproducir</button>
+        </div>
+    </div>
+    <script src="src/main.js"></script>
+</body>
+</html>

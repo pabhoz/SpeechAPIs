@@ -1,0 +1,91 @@
+:root {
+    --note-color: 15, 151, 255;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Helvetica, sans-serif;
+    .actionBtn {
+        font-size: 110%;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px solid rgb(var(--note-color));
+        background: white;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        &:hover {
+            background: var(--note-color);
+            color: white;
+        }
+    }
+    .title{
+        font-size: 150%;
+        margin-bottom: 10px;
+        color: var(--note-color);
+        border: none !important;
+        padding-left: 0 !important;
+    }
+}
+
+#config{
+    display: flex;
+    flex-flow: column;
+    border: 1px solid rgba(var(--note-color),0.3);
+    border-radius: 5px;
+    div {
+        margin-bottom: 10px;
+        border-left: 8px solid rgb(var(--note-color));
+        padding-left: 5px;
+    }
+    select{
+        font-size: 110%;
+    }
+}
+
+#config, #notesList {
+    padding: 5px 15px;
+    margin: 10px 5px;
+}
+
+#notesList {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    .note {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        margin: 0 0 6px 0;
+        border: 1px solid rgba(var(--note-color),0.3);
+        border-left: 8px solid rgb(var(--note-color));
+        border-radius: 0 5px 5px 0;
+        box-shadow: 2px 2px 3px rgba(100,100,100,0.1);
+        div {
+            margin-right: 10px;
+            width: 100%;
+        }
+        button {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid rgb(var(--note-color));
+            background: white;
+            justify-self: flex-end;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            &:hover{
+                background: var(--note-color);
+                color: white;
+            }
+        }
+        &.playing{
+            background: rgba(var(--note-color),0.1);
+        }
+    }
+}
