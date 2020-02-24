@@ -19,7 +19,7 @@ body{
         cursor: pointer;
         transition: all 0.2s ease;
         &:hover {
-            background: var(--note-color);
+            background: rgb(var(--note-color));
             color: white;
         }
     }
@@ -35,8 +35,6 @@ body{
 #config{
     display: flex;
     flex-flow: column;
-    border: 1px solid rgba(var(--note-color),0.3);
-    border-radius: 5px;
     div {
         margin-bottom: 10px;
         border-left: 8px solid rgb(var(--note-color));
@@ -46,8 +44,35 @@ body{
         font-size: 110%;
     }
 }
+#textArea {
+    display: flex;
+    flex-flow: column;
+    textarea{
+        font-size: 110%;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid rgb(var(--note-color));
+    }
+    button{
+        margin-top: 10px;
+    }
+}
 
-#config, #notesList {
+#mainActions{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    button {
+        flex-grow: 1;
+    }
+}
+
+#config, #textArea, #mainActions {
+    border: 1px solid rgba(var(--note-color),0.3);
+    border-radius: 5px;
+}
+
+#config, #notesList, #textArea, #mainActions {
     padding: 5px 15px;
     margin: 10px 5px;
 }
@@ -80,7 +105,7 @@ body{
             font-weight: bold;
             transition: all 0.2s ease;
             &:hover{
-                background: var(--note-color);
+                background: rgb(var(--note-color));
                 color: white;
             }
         }

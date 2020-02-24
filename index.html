@@ -8,10 +8,12 @@
     <script src="src/entities/Recognition.js"></script>
 </head>
 <body>
-    <button class="actionBtn" onclick="startRecording()">Empezar a grabar</button>
-    <button class="actionBtn" onclick="stopRecording()">Parar y guardar nota</button>
+    <div id="mainActions">
+        <button class="actionBtn" onclick="startRecording()">Empezar a grabar</button>
+        <button class="actionBtn" onclick="stopRecording()">Parar y guardar nota</button>
+    </div>
     <div id="config">
-        <div class="title">Configs</div>
+        <div class="title">Configuraciones</div>
         <div>Selector de color de la interfaz: <input id="appColor" type="color" onchange="setUIColor(this.value)"></div>
         <div>
             Selector de lenguage: 
@@ -24,8 +26,13 @@
             Selector de Voz: <select id="voiceSelector" onchange="setVoice(this.value)"></select>
         </div>
     </div>
+    <div id="textArea">
+        <div class="title">Escribe texto a leer</div>
+        <textarea></textarea>
+        <button class="actionBtn" onclick="readTextArea()">Leer Texto</button>
+    </div>
     <div id="notesList">
-        <div class="title">Notes</div>
+        <div class="title">Notas</div>
         <div class="note">
             <div>Nota en español</div><button onclick="readNote(event)">Reproducir</button>
         </div>

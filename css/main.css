@@ -21,7 +21,7 @@ body .actionBtn {
   transition: all 0.2s ease;
 }
 body .actionBtn:hover {
-  background: var(--note-color);
+  background: rgb(var(--note-color));
   color: white;
 }
 body .title {
@@ -35,8 +35,6 @@ body .title {
 #config {
   display: flex;
   flex-flow: column;
-  border: 1px solid rgba(var(--note-color), 0.3);
-  border-radius: 5px;
 }
 #config div {
   margin-bottom: 10px;
@@ -47,7 +45,35 @@ body .title {
   font-size: 110%;
 }
 
-#config, #notesList {
+#textArea {
+  display: flex;
+  flex-flow: column;
+}
+#textArea textarea {
+  font-size: 110%;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid rgb(var(--note-color));
+}
+#textArea button {
+  margin-top: 10px;
+}
+
+#mainActions {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+}
+#mainActions button {
+  flex-grow: 1;
+}
+
+#config, #textArea, #mainActions {
+  border: 1px solid rgba(var(--note-color), 0.3);
+  border-radius: 5px;
+}
+
+#config, #notesList, #textArea, #mainActions {
   padding: 5px 15px;
   margin: 10px 5px;
 }
@@ -83,7 +109,7 @@ body .title {
   transition: all 0.2s ease;
 }
 #notesList .note button:hover {
-  background: var(--note-color);
+  background: rgb(var(--note-color));
   color: white;
 }
 #notesList .note.playing {

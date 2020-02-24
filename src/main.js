@@ -81,6 +81,11 @@ function stopRecording() {
     translator.stop();
 }
 
+function readTextArea() {
+    const content = document.querySelector('#textArea textarea').value;
+    translator.read(content);
+}
+
 function readNote(e) {
     const note = e.target.parentElement;
     const content = note.querySelector('div').innerHTML;
